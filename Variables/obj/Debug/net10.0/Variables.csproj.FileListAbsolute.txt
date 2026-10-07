@@ -12,3 +12,4 @@ C:\Users\web\Documents\GitHub\TESD-1400\Variables\obj\Debug\net10.0\refint\Varia
 C:\Users\web\Documents\GitHub\TESD-1400\Variables\obj\Debug\net10.0\Variables.pdb
 C:\Users\web\Documents\GitHub\TESD-1400\Variables\obj\Debug\net10.0\Variables.genruntimeconfig.cache
 C:\Users\web\Documents\GitHub\TESD-1400\Variables\obj\Debug\net10.0\ref\Variables.dll
+C:\Users\web\Documents\GitHub\TESD-1400\Variables\obj\Debug\net10.0\Variables.sourcelink.json
