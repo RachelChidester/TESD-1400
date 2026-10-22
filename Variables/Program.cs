@@ -312,9 +312,24 @@ Print the sum to the console*/
 
 int[] value = new int[5];
 
-for (int i = 0; i < 5; i++)
+for (int i = 0; i < value.Length; i++)
 {
     Console.WriteLine("Input a value");
     
 }
 
+
+
+        // 2. Use a for loop to prompt the user 5 times
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            Console.Write($"Enter integer {i + 1}: ");
+            numbers[i] = int.Parse(Console.ReadLine());
+        }
+
+        // Optional: Print the stored array values
+        Console.WriteLine("\nYou entered:");
+        foreach (int num in numbers)
+        {
+            Console.WriteLine(num);
+        }
