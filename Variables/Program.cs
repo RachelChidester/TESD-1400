@@ -297,39 +297,109 @@
 //Simple Array Operations
 
 
-int[] values = {1, 2, 3, 4, 5};
+using System.Data;
 
-for (int i = 0; i < values.Length; i++)
+int[] valuesah = {1, 2, 3, 4, 5};
+
+for (int i = 0; i < valuesah.Length; i++)
 {
-    Console.WriteLine($"{values[i]}");
+    Console.WriteLine($"{valuesah[i]}");
 }
 
 
 // Sum of Elements
-/*Use a for loop to prompt the user for 5 integer values, storing each as an element in an array
-Iterate over the array to calculate the sum of the values the user entered
-Print the sum to the console*/
 
 int[] value = new int[5];
+int finalValue = 0; 
 
 for (int i = 0; i < value.Length; i++)
 {
-    Console.WriteLine("Input a value");
-    
+    Console.WriteLine($"Input a value");
+    value[i] = int.Parse(Console.ReadLine());
+}
+foreach (int val in value)
+{
+    finalValue += val;
+}
+Console.WriteLine($" Final sum: {finalValue}");
+
+
+//List of Strings
+
+List<string> names = new List<string>();
+
+for (int i= 0; i < 5; i++)
+{
+    Console.WriteLine($"Enter a Name");
+    string input = Console.ReadLine();
+    names.Add(input);
+}
+foreach (string name in names)
+{
+    Console.WriteLine(name);
 }
 
 
+// Sorting a List
 
-        // 2. Use a for loop to prompt the user 5 times
-        for (int i = 0; i < numbers.Length; i++)
-        {
-            Console.Write($"Enter integer {i + 1}: ");
-            numbers[i] = int.Parse(Console.ReadLine());
-        }
+List<string> words = new List<string>();
+List<int> numbers = new List<int>();
 
-        // Optional: Print the stored array values
-        Console.WriteLine("\nYou entered:");
-        foreach (int num in numbers)
-        {
-            Console.WriteLine(num);
-        }
+words.Add("This");
+words.Add("is");
+words.Add("going");
+words.Add("to");
+words.Add("work");
+
+numbers.Add(5);
+numbers.Add(40);
+numbers.Add(15);
+numbers.Add(3255);
+numbers.Add(25);
+
+foreach (string word in words)
+{
+    Console.WriteLine(word);
+}
+foreach (int num in numbers)
+{
+    Console.WriteLine(num);
+}
+
+words.Sort();
+numbers.Sort();
+
+foreach (string word in words)
+{
+    Console.WriteLine(word);
+}
+foreach (int num in numbers)
+{
+    Console.WriteLine(num);
+}
+
+
+// Running Total
+
+var values = new List<int>();
+var runningTotal = new List<int>();
+
+for (int i= 0; i < 5; i++)
+{
+    Console.WriteLine("Input a value");
+    values.Add(int.Parse(Console.ReadLine()));
+    if (i != 0)
+    {
+        runningTotal.Add(runningTotal[i-1] + values[i]);
+    }
+    else
+    {
+        runningTotal.Add(values[i]);
+    }
+}
+
+for (int i = 0; i <values.Count(); i++)
+{
+    Console.WriteLine($"Value: {values[i]}, Running Total: {runningTotal[i]}");
+}
+
