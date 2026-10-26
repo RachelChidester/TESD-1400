@@ -1,36 +1,122 @@
 ﻿
-// NUmber Guessing Game
 
-Random rand = new Random();
-int randomNumber = rand.Next(20) + 1;
-int guess = 0;
 
-while (true){
-Console.WriteLine("Pick a number between 1 and 20");
-string input = Console.ReadLine();
-if (int.TryParse(input, out int result)){
-    guess += 1;
-   if (result > randomNumber)
-    {
-        Console.WriteLine("Too high! Try guessing lower");
-    }
-    else if (result < randomNumber)
-    {
-        Console.WriteLine("Too low! Try guessing higher!");
-    }
-    else if (result == randomNumber)
-    {
-        Console.WriteLine($"Correct! The value was {randomNumber}. It took you {guess} guesses.");
-        break;
 
-    }
+
+//Excersices: Functions
+
+
+//Check Even or Odd
+bool IsEven(int number)
+{
+    return number % 2 == 0;
 }
+
+Console.WriteLine("Enter a number");
+string input = Console.ReadLine();
+if (int.TryParse(input, out int userNumber))
+{
+    bool result = IsEven(userNumber);
+    if (result)
+    {
+        Console.WriteLine("True");
+    }
     else
     {
-        Console.WriteLine("Invalid. Try again");
+        Console.WriteLine("False");
+    }
+}
+
+// Array Functions
+
+int SumArray(int[] numbers)
+{
+    int sum = 0;
+    for (int i = 0; i < numbers.Length; i++)
+    {
+        sum += numbers[i];
+    }
+    return sum;
+}
+
+double AverageArray(int[] numbers)
+{
+    if (numbers == null || numbers.Length == 0)
+    {
+        return 0.0;
+    }
+    double total = SumArray(numbers);
+    return total / numbers.Length;
+}
+
+
+// Prompt for Integer
+
+int PromptInt(string message)
+{
+    while (true)
+    {
+        Console.WriteLine("Please enter a valid integer value");
+        string input = Console.ReadLine();
+
+        if (int.TryParse(input, out int result))
+        {
+            return result;
+        }
+        else
+        {
+           Console.WriteLine("Please enter a valid integer value"); 
+        } 
+    }
+}
+
+// Factorial
+
+int Factorial(int n)
+{
+    if (n <= 1)
+    {
+        return 1;
     }
 
+    return n * Factorial(n - 1);
 }
+
+
+
+
+// // Number Guessing Game
+
+// Random rand = new Random();
+// int randomNumber = rand.Next(20) + 1;
+// int guess = 0;
+
+// while (true){
+// Console.WriteLine("Pick a number between 1 and 20");
+// string input = Console.ReadLine();
+// if (int.TryParse(input, out int result)){
+//     guess += 1;
+//    if (result > randomNumber)
+//     {
+//         Console.WriteLine("Too high! Try guessing lower");
+//     }
+//     else if (result < randomNumber)
+//     {
+//         Console.WriteLine("Too low! Try guessing higher!");
+//     }
+//     else if (result == randomNumber)
+//     {
+//         Console.WriteLine($"Correct! The value was {randomNumber}. It took you {guess} guesses.");
+//         break;
+
+//     }
+// }
+//     else
+//     {
+//         Console.WriteLine("Invalid. Try again");
+//     }
+
+// }
 
 
 
