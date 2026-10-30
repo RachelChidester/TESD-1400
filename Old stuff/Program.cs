@@ -1,58 +1,98 @@
 ﻿
 
+using System.Reflection.Emit;
+using System.Reflection.Metadata.Ecma335;
+// Creating instances
 
+Person p1 = new Person("Abby", 20);
+Person p2 = new Person("Ben", 17);
+Person p3 = new Person("Charles", 6); // I changed it from a negative so it would continue running
+Person p4 = new Person("Danny", 14);
+Person p5 = new Person("Elinor", 30);
 
-
-
-
-
-
-
-//Excersices: Functions
-
-
-//Check Even or Odd
-bool IsEven(int number)
+// Creating a List
+List<Person> peopleList = new List<Person>
 {
-    return number % 2 == 0;
+    p1,
+    p2,
+    p3,
+    p4,
+    p5
+};
+
+// Using 'Introduce'
+foreach (Person p in peopleList)
+{
+    p.Introduce();
 }
 
-Console.WriteLine("Enter a number");
-string input = Console.ReadLine();
-if (int.TryParse(input, out int userNumber))
+// Using HappyBirthday
+Console.WriteLine(p1.HappyBirthday());
+p1.Introduce();
+
+// Comparing people
+bool isOlder = p1.IsOlderThan(p2);
+if (isOlder)
 {
-    bool result = IsEven(userNumber);
-    if (result)
-    {
-        Console.WriteLine("True");
-    }
-    else
-    {
-        Console.WriteLine("False");
-    }
+    Console.WriteLine($"{p1.Name} is older than {p2.Name}.");
+}
+else
+{
+    Console.WriteLine($"{p1.Name} is NOT older than {p2.Name}.");
 }
 
-// Array Functions
+// Using GreetAll
+Person.GreetAll(peopleList);
 
-int SumArray(int[] numbers)
-{
-    int sum = 0;
-    for (int i = 0; i < numbers.Length; i++)
-    {
-        sum += numbers[i];
-    }
-    return sum;
-}
+string personInfo = p5.ToString();
+Console.WriteLine($"{p3}");
 
-double AverageArray(int[] numbers)
-{
-    if (numbers == null || numbers.Length == 0)
-    {
-        return 0.0;
-    }
-    double total = SumArray(numbers);
-    return total / numbers.Length;
-}
+
+// //Excersices: Functions
+
+
+// //Check Even or Odd
+// bool IsEven(int number)
+// {
+//     return number % 2 == 0;
+// }
+
+// Console.WriteLine("Enter a number");
+// string input = Console.ReadLine();
+// if (int.TryParse(input, out int userNumber))
+// {
+//     bool result = IsEven(userNumber);
+//     if (result)
+//     {
+//         Console.WriteLine("True");
+//     }
+//     else
+//     {
+//         Console.WriteLine("False");
+//     }
+// }
+
+// // Array Functions
+
+// int SumArray(int[] numbers)
+// {
+//     int sum = 0;
+//     for (int i = 0; i < numbers.Length; i++)
+//     {
+//         sum += numbers[i];
+//     }
+//     return sum;
+// }
+
+// double AverageArray(int[] numbers)
+// {
+//     if (numbers == null || numbers.Length == 0)
+//     {
+//         return 0.0;
+//     }
+//     double total = SumArray(numbers);
+//     return total / numbers.Length;
+// }
 
 
 // // Prompt for Integer
